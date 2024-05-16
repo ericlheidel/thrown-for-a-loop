@@ -3,61 +3,54 @@ List<Product> products = new List<Product>()
 {
 	new Product()
 	{
-	Name = "Football",
-	Price = 15.00M,
-	Sold = false,
-	StockDate = new DateTime(2024,5,1),
-	ManufactureYear = 2010,
-	Condition = 9.9
+		Name = "Football",
+		Price = 15.00M,
+		Sold = false,
+		StockDate = new DateTime(2024,5,1),
+		ManufactureYear = 2010,
+		Condition = 9.9
 	},
 	new Product()
 	{
-	Name = "Hockey Stick",
-	Price = 12.00M,
-	Sold = false,
-	StockDate = new DateTime(2024,4,30),
-	ManufactureYear = 2008,
-	Condition = 8.8
+		Name = "Hockey Stick",
+		Price = 12.00M,
+		Sold = false,
+		StockDate = new DateTime(2024,4,30),
+		ManufactureYear = 2008,
+		Condition = 8.8
 	},
 	new Product()
 	{
-	Name = "Boomerang",
-	Price = 24.00M,
-	Sold = true,
-	StockDate = new DateTime(2020,11,21),
-	ManufactureYear = 2023,
-	Condition = 4.2
+		Name = "Boomerang",
+		Price = 24.00M,
+		Sold = true,
+		StockDate = new DateTime(2020,11,21),
+		ManufactureYear = 2023,
+		Condition = 4.2
 	},
 	new Product()
 	{
-	Name = "Frisbee",
-	Price = 13.00M,
-	Sold = false,
-	StockDate = new DateTime(2024,4,1),
-	ManufactureYear = 2003,
-	Condition = 1.2
+		Name = "Frisbee",
+		Price = 13.00M,
+		Sold = false,
+		StockDate = new DateTime(2024,4,1),
+		ManufactureYear = 2003,
+		Condition = 1.2
 	},
 	new Product()
 	{
-	Name = "Golf Putter",
-	Price = 36.00M,
-	Sold = true,
-	StockDate = new DateTime(2019,10,12),
-	ManufactureYear = 2001,
-	Condition = 2.3
+		Name = "Golf Putter",
+		Price = 36.00M,
+		Sold = true,
+		StockDate = new DateTime(2019,10,12),
+		ManufactureYear = 2001,
+		Condition = 2.3
 	}
 };
 
 void ViewProductDetails()
 {
 	ListProducts();
-
-	// Console.WriteLine("Products:");
-
-	// for (int i = 0; i < products.Count; i++)
-	// {
-	//   Console.WriteLine($"{i + 1}. {products[i].Name}");
-	// }
 
 	Product chosenProduct = null;
 
@@ -87,23 +80,13 @@ void ViewProductDetails()
 
 	DateTime now = DateTime.Now;
 
-	// Product chosenProduct = products[response - 1];
+
 	TimeSpan timeInStock = now - chosenProduct.StockDate;
 	Console.WriteLine(@$"You chose: 
 {chosenProduct.Name}, which costs {chosenProduct.Price} dollars.
 It is {now.Year - chosenProduct.ManufactureYear} years old. 
 It {(chosenProduct.Sold ? "is not available." : $"has been in stock for {timeInStock.Days} days.")}
 It's condition on a scale of 1-10 is {chosenProduct.Condition}.");
-
-	// decimal totalValue = 0.0M;
-	// foreach (Product product in products)
-	// {
-	//   if (!product.Sold)
-	//   {
-	//     totalValue += product.Price;
-	//   }
-	// }
-	// Console.WriteLine($"Total inventory value: ${totalValue}");
 }
 
 
